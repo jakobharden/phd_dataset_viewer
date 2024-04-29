@@ -1,0 +1,208 @@
+<h1>Dataset Viewer, version 1.0</h1>
+
+<p>The <strong>Dataset Viewer</strong> is a script collection that allows for plotting data from datasets made from measurement data of ultrasonic pulse transmission tests. The entire script collection was conceived, implemented and tested by Jakob Harden using the scientific numerical programming language of GNU Octave 6.2.0. The main features cover 2D plots, 3D plots and rendering MP4 video files from the measurement data included in the datasets.</p>
+
+<h2>Table of contents</h2>
+
+<ul>
+<li>License</li>
+<li>Prerequisites</li>
+<li>Directory and file structure</li>
+<li>Installation instructions</li>
+<li>Usage instructions</li>
+<li>Help</li>
+<li>Related data sources</li>
+<li>Related software</li>
+<li>Revision and release history</li>
+</ul>
+
+<h2>Licence</h2>
+
+<p>All files published under the <strong>DOI 10.3217/c1ccn-8m982</strong> are licenced under the <a href="https://opensource.org/license/mit/">MIT licence</a>.</p>
+
+<pre><code>Copyright 2023 Jakob Harden (jakob.harden@tugraz.at, Graz University of Technology, Graz, Austria)
+License: MIT
+This file is part of the PhD thesis of Jakob Harden.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+documentation files (the “Software”), to deal in the Software without restriction, including without
+limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</code></pre>
+
+<h2>Prerequisites</h2>
+
+<p>To be able to use the scripts, GNU Octave 6.2.0 (or a higher version) need to to be installed.
+GNU Octave is available via the package management system on many Linux distributions. Windows users have to download the Windows version of GNU Octave and to install the software manually.</p>
+
+<p><a href="https://octave.org/download">GNU Octave download</a></p>
+
+<p>To create MP4 video files (function file: dsviewer_mp4.m) <strong>ffmpeg</strong> need to be installed.</p>
+
+<p><a href="https://www.ffmpeg.org/">ffmpeg</a></p>
+
+<h2>Directory and file structure</h2>
+
+<p>All scripts files (*.m) are plain text files written in the scientific programming language of GNU Octave 6.2.0.</p>
+
+<p><code>
+    dsviewer/ <br />
+    ├── dsviewer_2d.m <br />
+    ├── dsviewer_3d.m <br />
+    ├── dsviewer_mp4.m <br />
+    ├── dsviewer_settings.m <br />
+    ├── dsviewer_tem.m <br />
+    ├── examples <br />
+    │   ├── plot2d <br />
+    │   ├── plot3d <br />
+    │   ├── plotmp4 <br />
+    │   ├── plottem <br />
+    │   ├── README.html <br />
+    │   └── README.md <br />
+    ├── init.m <br />
+    ├── README.html <br />
+    ├── README.md <br />
+    ├── tmp <br />
+    └── tools <br />
+        ├── tool_create_axes.m <br />
+        ├── tool_create_figure.m <br />
+        ├── tool_create_plot2d.m <br />
+        ├── tool_create_plot3d.m <br />
+        ├── tool_get_dscode.m <br />
+        ├── tool_get_magnitude.m <br />
+        ├── tool_get_maturity.m <br />
+        ├── tool_get_mp4ulim.m <br />
+        ├── tool_get_ptslen.m <br />
+        ├── tool_get_timesig.m <br />
+        ├── tool_gui_dsload.m <br />
+        ├── tool_gui_selchn.m <br />
+        ├── tool_gui_selmp4om.m <br />
+        ├── tool_gui_selsec.m <br />
+        ├── tool_gui_selsig.m <br />
+        ├── tool_gui_seltem.m <br />
+        └── tool_update_plot2d.m
+</code></p>
+
+<ul>
+<li>dsviewer_2d.m ... function file, Plot 2D view of ultrasonic signal data</li>
+<li>dsviewer_3d.m ... function file, Plot 3D view of ultrasonic signal data</li>
+<li>dsviewer_mp4.m ... function file, Plot/Render signal data to MP4 video file</li>
+<li>dsviewer_settings.m ... function file, Return plot and rendering settings data structure</li>
+<li>dsviewer_tem.m ... function file, Plot specimen temperature measurement data</li>
+<li><strong>examples</strong> ... directory, Examples of plots and videos created with this program (see also: examples/README.md)</li>
+<li>init.m ... function file, Initialize program: Dataset Viewer, version 1.0</li>
+<li>README.html ... HTML version of this file</li>
+<li>README.md ... this file</li>
+<li><strong>tmp</strong> ... directory, temporary directory used to store frames while rendering MP4 video files</li>
+<li><strong>tools</strong> ... directory, 
+<ul>
+<li>/tools/tool_create_axes.m ... function file, Create axes object and return axes object handle</li>
+<li>/tools/tool_create_figure.m ... function file, Create figure object and return figure object handle</li>
+<li>/tools/tool_create_plot2d.m ... function file, Create 2D plot object and return plot object handle</li>
+<li>/tools/tool_update_plot2d.m ... function file, Update plot coordinates of existing 2D plot object</li>
+<li>/tools/tool_gui_dsload.m ... function file, Select and load GNU Octave binary dataset file (*.oct), GUI</li>
+<li>/tools/tool_gui_selchn.m ... function file, Select channel of ultrasonic pulse transmission test, GUI</li>
+<li>/tools/tool_gui_selmp4om.m ... function file, Select MP4 video output mode, GUI</li>
+<li>/tools/tool_gui_selsec.m ... function file, Select signal section of ultrasonic signal, GUI</li>
+<li>/tools/tool_gui_selsig.m ... function file, Select signal(s) from ultrasonic pulse transmission test, GUI</li>
+<li>/tools/tool_gui_seltem.m ... function file, Select channel of specimen temperature test, GUI</li>
+<li>/tools/tool_get_dscode.m ... function file, Get dataset code from dataset metadata</li>
+<li>/tools/tool_get_magnitude.m ... function file, Get signal sample magnitude matrix from dataset or ultrasonic test substructure</li>
+<li>/tools/tool_get_maturity.m ... function file, Get maturity time array from ultrasonic test substructure of a dataset</li>
+<li>/tools/tool_get_mp4ulim.m ... function file, Get array of upper sample index limits to render MP4 video files</li>
+<li>/tools/tool_get_ptslen.m ... function file, Get length of pre-trigger section (the noise recorded before the trigger-point)</li>
+<li>/tools/tool_get_timesig.m ... function file, Get signal sample time signature array from dataset or ultrasonic test substructure</li>
+</ul></li>
+</ul>
+
+<h2>Installation instructions</h2>
+
+<ol>
+<li>Copy the program directory to a location of your choice. e.g. <strong>working_directory</strong>.   </li>
+<li>Open GNU Octave.   </li>
+<li>Change the working directory to the program directory. e.g. <strong>working_directory</strong>.   </li>
+</ol>
+
+<h2>Usage instructions</h2>
+
+<ol>
+<li>Adjust settings in function file: dsviewer_settings.m.   </li>
+<li>Run GNU Octave.   </li>
+<li>Initialize program.   </li>
+<li>Execute any of the function files.   </li>
+</ol>
+
+<h3>Initialize program</h3>
+
+<p>The 'init' command initializes the program. This is only required once before executing all the other functions. The command is adding the subdirectories included in the main program directory to the 'path' environment variable.</p>
+
+<p><code>
+    octave: &gt;&gt; init;
+</code></p>
+
+<h3>Execute function file on the command line interface</h3>
+
+<p><code>
+    octave: &gt;&gt; [r_fh, r_ah, r_ph] = dsviewer_2d(p_fp, p_ss, p_cn, p_si); <br />
+    octave: &gt;&gt; [r_fh, r_ah, r_ph] = dsviewer_3d(p_fp, p_ss, p_cn, p_sn); <br />
+    octave: &gt;&gt; [r_fh, r_ah, r_ph] = dsviewer_tem(p_fp, p_ss, p_cn); <br />
+    octave: &gt;&gt; [r_fp] = dsviewer_mp4(p_fp, p_tp, p_ss, p_om);
+</code></p>
+
+<p>Note: The functions shown above can be used in interactive or non-interactive mode. The interactive mode is activated when necessary or all parameters are missing. Almost all plot functions are returning the figure handle (fh). That handle can be used to modify the plots and/or to integrate the plot functions into other scripts. The function dsviewer_mp4 returns the file path (fp) of the newly created video file.</p>
+
+<h2>Help</h2>
+
+<p>All function files contain an adequate function description and instructions on how to use the functions. This documentation can be displayed in the GNU Octave command line interface by entering the following command:</p>
+
+<p><code>
+    octave: &gt;&gt; help function_file_name;
+</code></p>
+
+<h2>Related data sources</h2>
+
+<p>Datasets whos content can be plotted with this scripts are made available at the repository of Graz University of Technology under an open license (Creative Commons, CC BY 4.0). The data records enlisted below contain the raw data, the compiled datasets and a technical description of the record content.</p>
+
+<h3>Data records</h3>
+
+<ul>
+<li>Harden, J. (2023) "Ultrasonic Pulse Transmission Tests: Datasets - Test Series 1, Cement Paste at Early Stages". Graz University of Technology. <a href="https://doi.org/10.3217/bhs4g-m3z76">doi: 10.3217/bhs4g-m3z76</a>   </li>
+<li>Harden, J. (2023) "Ultrasonic Pulse Transmission Tests: Datasets - Test Series 3, Reference Tests on Air". Graz University of Technology. <a href="https://doi.org/10.3217/ph0jm-8ax76">doi: 10.3217/ph0jm-8ax76</a>   </li>
+<li>Harden, J. (2023) "Ultrasonic Pulse Transmission Tests: Datasets - Test Series 4, Cement Paste at Early Stages". Graz University of Technology. <a href="https://doi.org/10.3217/f62md-kep36">doi: 10.3217/f62md-kep36</a>   </li>
+<li>Harden, J. (2023) "Ultrasonic Pulse Transmission Tests: Datasets - Test Series 5, Reference Tests on Air". Graz University of Technology. <a href="https://doi.org/10.3217/bjkrj-pg829">doi: 10.3217/bjkrj-pg829</a>   </li>
+<li>Harden, J. (2023) "Ultrasonic Pulse Transmission Tests: Datasets - Test Series 6, Reference Tests on Water". Graz University of Technology. <a href="https://doi.org/10.3217/hn7we-q7z09">doi: 10.3217/hn7we-q7z09</a>   </li>
+<li>Harden, J. (2023) "Ultrasonic Pulse Transmission Tests: Datasets - Test Series 7, Reference Tests on Aluminium Cylinder". Graz University of Technology. <a href="https://doi.org/10.3217/azh6e-rvy75">doi: 10.3217/azh6e-rvy75</a>   </li>
+</ul>
+
+<h2>Related software</h2>
+
+<p>The referenced datasets are compiled from raw data using a dataset compilation tool implemented in the programming language of GNU Octave 6.2.0 ("Dataset Compiler, version 1.1") . To understand the structure of the datasets, it is a good idea to look at the soure code of that tool. Therefore, it was made publicly available under the MIT license at the repository of Graz University of Technology.</p>
+
+<p>Another tool, implemented in the programming language of GNU Octave 6.2.0, allows for exporting data contained in the datasets ("Dataset Exporter, version 1.0"). The main features of that script collection cover the export of substructures to variables and the serialization to the CSV format, the JSON structure format and TeX code. It is also made publicly available under the MIT licence at the repository of Graz University of Technology.</p>
+
+<h3>Dataset Compiler, version 1.1:</h3>
+
+<ul>
+<li>Harden, J. (2023) "Ultrasonic Pulse Transmission Tests: Data set compiler (1.1)". Graz University of Technology. <a href="https://doi.org/10.3217/6qg3m-af058">doi: 10.3217/6qg3m-af058</a></li>
+</ul>
+
+<h3>Dataset Exporter, version 1.0:</h3>
+
+<ul>
+<li>Harden, J. (2023) "Ultrasonic Pulse Transmission Tests: Dataset Exporter (1.0)". Graz University of Technology. <a href="https://doi.org/10.3217/9adsn-8dv64">doi: 10.3217/9adsn-8dv64</a></li>
+</ul>
+
+<h2>Revision and release history</h2>
+
+<h3>2023-08-26, version 1.0</h3>
+
+<ul>
+<li>published/released version 1.0, by Jakob Harden   </li>
+<li>url: <a href="https://doi.org/10.3217/c1ccn-8m982">Repository of Graz University of Technology</a>   </li>
+<li>doi: 10.3217/c1ccn-8m982   </li>
+</ul>
