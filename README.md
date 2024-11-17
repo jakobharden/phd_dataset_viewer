@@ -2,21 +2,21 @@
 
 The **Dataset Viewer** is a script collection that allows for plotting data from datasets made from measurement data of ultrasonic pulse transmission tests. The main features cover 2D plots, 3D plots and rendering MP4 video files from the measurement data included in the datasets.
 
-[!INFO]
-The entire content of this script collection was conceived, implemented and tested by Jakob Harden using the scientific numerical programming language of GNU Octave 6.2.0.
+> [!NOTE]
+> The entire content of this script collection was conceived, implemented and tested by Jakob Harden using the scientific numerical programming language of GNU Octave 6.2.0.
 
 
 ## Table of contents
 
-- License
-- Prerequisites
-- Directory and file structure
-- Installation instructions
-- Usage instructions
-- Help and Documentation
-- Related data sources
-- Related software
-- Revision and release history
+- [License](#license)
+- [Prerequisites](#prerequisites)
+- [Directory and file structure](#directory-and-file-structure)
+- [Installation instructions](#installation-instructions)
+- [Usage instructions](#usage-instructions)
+- [Help and Documentation](#help-and-documentation)
+- [Related data sources](#related-data-sources)
+- [Related software](#related-software)
+- [Revision and release history](#revision-and-release-history)
 
 
 ## Licence
@@ -52,7 +52,7 @@ To create MP4 video files (function file: dsviewer_mp4.m) **ffmpeg** need to be 
 
 ## Directory and file structure
 
-All scripts files (*.m) are plain text files written in the scientific programming language of GNU Octave 6.2.0.
+All scripts files (*.m) are UTF-8 encoded plain text files written in the scientific programming language of GNU Octave 6.2.0.
 
 ```
     dsviewer/   
@@ -154,7 +154,8 @@ The 'init' command initializes the program. This is only required once before ex
     octave: >> [r_fp] = dsviewer_mp4(p_fp, p_tp, p_ss, p_om);   
 ```
 
-Note: The functions shown above can be used in interactive or non-interactive mode. The interactive mode is activated when necessary or all parameters are missing. Almost all plot functions are returning the figure handle (fh). That handle can be used to modify the plots and/or to integrate the plot functions into other scripts. The function dsviewer_mp4 returns the file path (fp) of the newly created video file.
+> [!NOTE]
+> The functions shown above can be used in interactive or non-interactive mode. The interactive mode is activated when necessary or all parameters are missing. Almost all plot functions are returning the figure handle (fh). That handle can be used to modify the plots and/or to integrate the plot functions into other scripts. The function dsviewer_mp4 returns the file path (fp) of the newly created video file.
 
 
 ## Help and Documentation
@@ -189,8 +190,8 @@ The referenced datasets are compiled from raw data using a dataset compilation t
 
 - Harden, J. (2023) "Ultrasonic Pulse Transmission Tests: Data set compiler (1.1)". Graz University of Technology. [doi: 10.3217/6qg3m-af058](https://doi.org/10.3217/6qg3m-af058)
 
-[!NOTE]
-*Dataset Compiler* is also available on **github**. [Dataset Compiler](https://github.com/jakobharden/phd_dataset_compiler)
+> [!NOTE]
+> *Dataset Compiler* is also available on **github**. [Dataset Compiler](https://github.com/jakobharden/phd_dataset_compiler)
 
 
 ### Dataset Exporter, version 1.0:
@@ -199,8 +200,8 @@ The referenced datasets are compiled from raw data using a dataset compilation t
 
 - Harden, J. (2023) "Ultrasonic Pulse Transmission Tests: Dataset Exporter (1.0)". Graz University of Technology. [doi: 10.3217/9adsn-8dv64](https://doi.org/10.3217/9adsn-8dv64)
 
-[!NOTE]
-*Dataset Exporter* is also available on **github**. [Dataset Exporter](https://github.com/jakobharden/phd_dataset_exporter)
+> [!NOTE]
+> *Dataset Exporter* is also available on **github**. [Dataset Exporter](https://github.com/jakobharden/phd_dataset_exporter)
 
 
 ## Revision and release history
