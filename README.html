@@ -1,6 +1,9 @@
 <h1>Dataset Viewer, version 1.0</h1>
 
-<p>The <strong>Dataset Viewer</strong> is a script collection that allows for plotting data from datasets made from measurement data of ultrasonic pulse transmission tests. The entire script collection was conceived, implemented and tested by Jakob Harden using the scientific numerical programming language of GNU Octave 6.2.0. The main features cover 2D plots, 3D plots and rendering MP4 video files from the measurement data included in the datasets.</p>
+<p>The <strong>Dataset Viewer</strong> is a script collection that allows for plotting data from datasets made from measurement data of ultrasonic pulse transmission tests. The main features cover 2D plots, 3D plots and rendering MP4 video files from the measurement data included in the datasets.</p>
+
+<p>[!INFO]
+The entire content of this script collection was conceived, implemented and tested by Jakob Harden using the scientific numerical programming language of GNU Octave 6.2.0.</p>
 
 <h2>Table of contents</h2>
 
@@ -10,7 +13,7 @@
 <li>Directory and file structure</li>
 <li>Installation instructions</li>
 <li>Usage instructions</li>
-<li>Help</li>
+<li>Help and Documentation</li>
 <li>Related data sources</li>
 <li>Related software</li>
 <li>Revision and release history</li>
@@ -156,7 +159,7 @@ GNU Octave is available via the package management system on many Linux distribu
 
 <p>Note: The functions shown above can be used in interactive or non-interactive mode. The interactive mode is activated when necessary or all parameters are missing. Almost all plot functions are returning the figure handle (fh). That handle can be used to modify the plots and/or to integrate the plot functions into other scripts. The function dsviewer_mp4 returns the file path (fp) of the newly created video file.</p>
 
-<h2>Help</h2>
+<h2>Help and Documentation</h2>
 
 <p>All function files contain an adequate function description and instructions on how to use the functions. This documentation can be displayed in the GNU Octave command line interface by entering the following command:</p>
 
@@ -181,21 +184,27 @@ GNU Octave is available via the package management system on many Linux distribu
 
 <h2>Related software</h2>
 
-<p>The referenced datasets are compiled from raw data using a dataset compilation tool implemented in the programming language of GNU Octave 6.2.0 ("Dataset Compiler, version 1.1") . To understand the structure of the datasets, it is a good idea to look at the soure code of that tool. Therefore, it was made publicly available under the MIT license at the repository of Graz University of Technology.</p>
-
-<p>Another tool, implemented in the programming language of GNU Octave 6.2.0, allows for exporting data contained in the datasets ("Dataset Exporter, version 1.0"). The main features of that script collection cover the export of substructures to variables and the serialization to the CSV format, the JSON structure format and TeX code. It is also made publicly available under the MIT licence at the repository of Graz University of Technology.</p>
-
 <h3>Dataset Compiler, version 1.1:</h3>
+
+<p>The referenced datasets are compiled from raw data using a dataset compilation tool implemented in the programming language of GNU Octave 6.2.0. To understand the structure of the datasets, it is a good idea to look at the soure code of that tool. Therefore, it was made publicly available under the MIT license at the repository of Graz University of Technology.</p>
 
 <ul>
 <li>Harden, J. (2023) "Ultrasonic Pulse Transmission Tests: Data set compiler (1.1)". Graz University of Technology. <a href="https://doi.org/10.3217/6qg3m-af058">doi: 10.3217/6qg3m-af058</a></li>
 </ul>
 
+<p>[!NOTE]
+<em>Dataset Compiler</em> is also available on <strong>github</strong>. <a href="https://github.com/jakobharden/phd_dataset_compiler">Dataset Compiler</a></p>
+
 <h3>Dataset Exporter, version 1.0:</h3>
+
+<p><em>Dataset Exporter</em> is implemented in the programming language of GNU Octave 6.2.0 and allows for exporting data contained in the datasets. The main features of that script collection cover the export of substructures to variables and the serialization to the CSV format, the JSON structure format and TeX code. It is also made publicly available under the MIT licence at the repository of Graz University of Technology.</p>
 
 <ul>
 <li>Harden, J. (2023) "Ultrasonic Pulse Transmission Tests: Dataset Exporter (1.0)". Graz University of Technology. <a href="https://doi.org/10.3217/9adsn-8dv64">doi: 10.3217/9adsn-8dv64</a></li>
 </ul>
+
+<p>[!NOTE]
+<em>Dataset Exporter</em> is also available on <strong>github</strong>. <a href="https://github.com/jakobharden/phd_dataset_exporter">Dataset Exporter</a></p>
 
 <h2>Revision and release history</h2>
 
