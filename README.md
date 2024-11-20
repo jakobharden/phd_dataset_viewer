@@ -45,7 +45,7 @@ GNU Octave is available via the package management system on many Linux distribu
 
 [GNU Octave download](https://octave.org/download)
 
-To create MP4 video files (function file: dsviewer_mp4.m) **ffmpeg** need to be installed.
+To create MP4 video files (function file: *dsviewer_mp4.m*) **ffmpeg** need to be installed.
 
 [ffmpeg](https://www.ffmpeg.org/)
 
@@ -123,14 +123,14 @@ All scripts files (*.m) are UTF-8 encoded plain text files written in the scient
 
 ## Installation instructions
 
-1. Copy the program directory to a location of your choice. e.g. **working_directory**.   
+1. Copy the program directory to a location of your choice. e.g. **workdir**.   
 2. Open GNU Octave.   
-3. Change the working directory to the program directory. e.g. **working_directory**.   
+3. Change the working directory to the program directory. e.g. **workdir**.   
 
 
 ## Usage instructions
 
-1. Adjust settings in function file: dsviewer_settings.m.   
+1. Adjust settings in function file *dsviewer_settings.m* to your requirements.   
 2. Run GNU Octave.   
 3. Initialize program.   
 4. Execute any of the function files.   

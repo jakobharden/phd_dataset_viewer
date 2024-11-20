@@ -2,21 +2,23 @@
 
 <p>The <strong>Dataset Viewer</strong> is a script collection that allows for plotting data from datasets made from measurement data of ultrasonic pulse transmission tests. The main features cover 2D plots, 3D plots and rendering MP4 video files from the measurement data included in the datasets.</p>
 
-<p>[!INFO]
+<blockquote>
+  <p>[!NOTE]
 The entire content of this script collection was conceived, implemented and tested by Jakob Harden using the scientific numerical programming language of GNU Octave 6.2.0.</p>
+</blockquote>
 
 <h2>Table of contents</h2>
 
 <ul>
-<li>License</li>
-<li>Prerequisites</li>
-<li>Directory and file structure</li>
-<li>Installation instructions</li>
-<li>Usage instructions</li>
-<li>Help and Documentation</li>
-<li>Related data sources</li>
-<li>Related software</li>
-<li>Revision and release history</li>
+<li><a href="#license">License</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#directory-and-file-structure">Directory and file structure</a></li>
+<li><a href="#installation-instructions">Installation instructions</a></li>
+<li><a href="#usage-instructions">Usage instructions</a></li>
+<li><a href="#help-and-documentation">Help and Documentation</a></li>
+<li><a href="#related-data-sources">Related data sources</a></li>
+<li><a href="#related-software">Related software</a></li>
+<li><a href="#revision-and-release-history">Revision and release history</a></li>
 </ul>
 
 <h2>Licence</h2>
@@ -45,13 +47,13 @@ GNU Octave is available via the package management system on many Linux distribu
 
 <p><a href="https://octave.org/download">GNU Octave download</a></p>
 
-<p>To create MP4 video files (function file: dsviewer_mp4.m) <strong>ffmpeg</strong> need to be installed.</p>
+<p>To create MP4 video files (function file: <em>dsviewer_mp4.m</em>) <strong>ffmpeg</strong> need to be installed.</p>
 
 <p><a href="https://www.ffmpeg.org/">ffmpeg</a></p>
 
 <h2>Directory and file structure</h2>
 
-<p>All scripts files (*.m) are plain text files written in the scientific programming language of GNU Octave 6.2.0.</p>
+<p>All scripts files (*.m) are UTF-8 encoded plain text files written in the scientific programming language of GNU Octave 6.2.0.</p>
 
 <p><code>
     dsviewer/ <br />
@@ -126,15 +128,15 @@ GNU Octave is available via the package management system on many Linux distribu
 <h2>Installation instructions</h2>
 
 <ol>
-<li>Copy the program directory to a location of your choice. e.g. <strong>working_directory</strong>.   </li>
+<li>Copy the program directory to a location of your choice. e.g. <strong>workdir</strong>.   </li>
 <li>Open GNU Octave.   </li>
-<li>Change the working directory to the program directory. e.g. <strong>working_directory</strong>.   </li>
+<li>Change the working directory to the program directory. e.g. <strong>workdir</strong>.   </li>
 </ol>
 
 <h2>Usage instructions</h2>
 
 <ol>
-<li>Adjust settings in function file: dsviewer_settings.m.   </li>
+<li>Adjust settings in function file <em>dsviewer_settings.m</em> to your requirements.   </li>
 <li>Run GNU Octave.   </li>
 <li>Initialize program.   </li>
 <li>Execute any of the function files.   </li>
@@ -157,7 +159,10 @@ GNU Octave is available via the package management system on many Linux distribu
     octave: &gt;&gt; [r_fp] = dsviewer_mp4(p_fp, p_tp, p_ss, p_om);
 </code></p>
 
-<p>Note: The functions shown above can be used in interactive or non-interactive mode. The interactive mode is activated when necessary or all parameters are missing. Almost all plot functions are returning the figure handle (fh). That handle can be used to modify the plots and/or to integrate the plot functions into other scripts. The function dsviewer_mp4 returns the file path (fp) of the newly created video file.</p>
+<blockquote>
+  <p>[!NOTE]
+The functions shown above can be used in interactive or non-interactive mode. The interactive mode is activated when necessary or all parameters are missing. Almost all plot functions are returning the figure handle (fh). That handle can be used to modify the plots and/or to integrate the plot functions into other scripts. The function dsviewer_mp4 returns the file path (fp) of the newly created video file.</p>
+</blockquote>
 
 <h2>Help and Documentation</h2>
 
@@ -192,8 +197,10 @@ GNU Octave is available via the package management system on many Linux distribu
 <li>Harden, J. (2023) "Ultrasonic Pulse Transmission Tests: Data set compiler (1.1)". Graz University of Technology. <a href="https://doi.org/10.3217/6qg3m-af058">doi: 10.3217/6qg3m-af058</a></li>
 </ul>
 
-<p>[!NOTE]
+<blockquote>
+  <p>[!NOTE]
 <em>Dataset Compiler</em> is also available on <strong>github</strong>. <a href="https://github.com/jakobharden/phd_dataset_compiler">Dataset Compiler</a></p>
+</blockquote>
 
 <h3>Dataset Exporter, version 1.0:</h3>
 
@@ -203,8 +210,10 @@ GNU Octave is available via the package management system on many Linux distribu
 <li>Harden, J. (2023) "Ultrasonic Pulse Transmission Tests: Dataset Exporter (1.0)". Graz University of Technology. <a href="https://doi.org/10.3217/9adsn-8dv64">doi: 10.3217/9adsn-8dv64</a></li>
 </ul>
 
-<p>[!NOTE]
+<blockquote>
+  <p>[!NOTE]
 <em>Dataset Exporter</em> is also available on <strong>github</strong>. <a href="https://github.com/jakobharden/phd_dataset_exporter">Dataset Exporter</a></p>
+</blockquote>
 
 <h2>Revision and release history</h2>
 
